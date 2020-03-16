@@ -15,7 +15,7 @@
                     <a href="/"><img src="/img/logo.svg" alt=""></a>
                 </div>
 
-                <form action="#" method="GET" id="form-top">
+                <form action="#" method="GET" class="form-top">
                     <div class="form-group">
                         <input type="text" class="form-control" name="search" placeholder="Search video">
                     </div>
@@ -31,11 +31,13 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/news">News</a></li>
                         <li><a href="/most-viewed">Most Viewed</a></li>
+                        <li><a href="/random">Random</a></li>
+                        <!--
                         <li><a href="/top-rated">Top Rated</a></li>
                         <li><a href="/most-commented">Most Commented</a></li>
-                        <li><a href="/random">Random</a></li>
                         <li><a href="/stars">Stars</a></li>
                         <li><a href="/channels">Channels</a></li>
+                         -->
                     </ul>
                 </nav>
             </div>
@@ -46,7 +48,7 @@
                 <ul>
                     {% for i in [0, 0,0,0,0,0] %}
                         <li><a href="#">zz</a></li>
-                    {% endfor %}ea
+                    {% endfor %}
                 </ul>
             </div>
             <main>

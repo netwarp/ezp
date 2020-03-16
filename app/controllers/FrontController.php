@@ -12,10 +12,11 @@ class FrontController extends \Phalcon\Mvc\Controller
     {
         $videos = [];
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $videos[] = [
-                'title' => "lorem ipsum {$i}",
-                'link' => "/watch/$i"
+                'title' => "lorem ipsum  {$i}",
+                'link' => "/watch/$i",
+                'nb_views' => random_int(10_000, 100_000)
             ];
         }
 
@@ -31,6 +32,11 @@ class FrontController extends \Phalcon\Mvc\Controller
     public function watchAction($id)
     {
         $this->view->id = $id;
+
+        $this->view->title = 'Lorem ipsum dolor sit amet...';
+        $this->view->nb_views = rand(10_000, 100_000);
+
+
         $this->view->pick('front/watch');
     }
 
