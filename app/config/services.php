@@ -15,7 +15,17 @@ use Phalcon\Url as UrlResolver;
  * Shared configuration service
  */
 $di->setShared('config', function () {
-    return new \Phalcon\Config\Adapter\Ini(APP_PATH . "/config/config.ini");
+    $config_ini = new \Phalcon\Config\Adapter\Ini(APP_PATH . "/config/config.ini");
+
+   // $config_php = new \Phalcon\Config\Adapter\Php(APP_PATH . '/config/config.php');
+
+    /*
+    echo "<pre>";
+    var_dump($config_php);
+    echo "</pre>";
+    */
+
+    return $config_ini;
 });
 
 /**
