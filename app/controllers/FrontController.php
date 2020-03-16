@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+
+
 class FrontController extends \Phalcon\Mvc\Controller
 {
     /**
@@ -19,6 +21,25 @@ class FrontController extends \Phalcon\Mvc\Controller
 
         $this->view->videos = $videos;
         $this->view->pick('front/index');
+    }
+
+    /**
+     * Watch page
+     * @param $id int
+     *
+     */
+    public function watchAction($id)
+    {
+        $this->view->id = $id;
+        $this->view->pick('front/watch');
+    }
+
+    /**
+     * @param $tag string
+     */
+    public function tagAction($tag)
+    {
+
     }
 
 }
