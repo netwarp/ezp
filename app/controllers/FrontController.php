@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
+use Phalcon\Mvc\Controller;
 
-
-class FrontController extends \Phalcon\Mvc\Controller
+class FrontController extends Controller
 {
     /**
      * Welcome home
@@ -48,5 +48,19 @@ class FrontController extends \Phalcon\Mvc\Controller
 
     }
 
+    public function newsAction()
+    {
+        echo 'news';
+    }
+
+    public function mostViewedAction()
+    {
+        echo '...';
+    }
+
+    public function randomAction()
+    {
+
+    }
 }
 
