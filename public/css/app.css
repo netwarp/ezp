@@ -52,6 +52,10 @@ nav ul {
         .sidebar ul li a:hover {
           background: salmon; }
 
+main {
+  padding: 1rem; }
+
 .card {
   background: #fff;
-  margin: 1rem; }
+  margin: 1rem;
+  padding: 1rem; }
