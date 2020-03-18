@@ -2,14 +2,41 @@
 declare(strict_types=1);
 
 use Phalcon\Mvc\Controller;
+use Phalcon\Http\Request;
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
 
 class FrontController extends Controller
 {
+    /**
+     * @param array $data
+     */
+    private function log(array $data)
+    {
+        $date = Date('Y-m-d');
+        $adapter = new Stream("../storage/logs/{$date}.log");
+        $logger  = new Logger(
+            'messages',
+            [
+                'main' => $adapter,
+            ]
+        );
+        $logger->info(json_encode($data));
+    }
+
     /**
      * Welcome home
      */
     public function indexAction()
     {
+        $request = new Request;
+        $data = [
+            'ip' => $request->getClientAddress(),
+            'page' => 'index'
+        ];
+        $this->log($data);
+
+
         $videos = [];
 
         for ($i = 0; $i < 20; $i++) {
@@ -27,10 +54,20 @@ class FrontController extends Controller
     /**
      * Watch page
      * @param $id int
-     *
+     * TODO session increment counter
+     * Logger
      */
     public function watchAction($id)
     {
+        # Start Logger
+        $request = new Request;
+        $data = [
+            'ip' => $request->getClientAddress(),
+            'page' => 'watch'
+        ];
+        $this->log($data);
+        # End Logger
+
         $this->view->id = $id;
 
         $this->view->title = 'Lorem ipsum dolor sit amet...';
@@ -50,7 +87,8 @@ class FrontController extends Controller
 
     public function newsAction()
     {
-        echo 'news';
+        $date = Date('Y-m-d');
+        var_dump($date);
     }
 
     public function mostViewedAction()
