@@ -1,13 +1,13 @@
 body {
-  background: darkred;
   margin: 0;
   padding: 0;
-  font-family: Arial; }
+  font-family: Arial;
+  background: #242424; }
 
 header {
   display: flex;
   flex-direction: column;
-  background: #000; }
+  background: #242424; }
   header .header-top {
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,9 @@ header {
       width: 50%; }
       header .header-top .form-top input {
         width: 100%;
-        padding: 1rem; }
+        padding: 1rem;
+        border-radius: 0.4rem;
+        border: 1px solid transparent; }
 
 nav ul {
   background: darkgreen;
@@ -35,15 +37,13 @@ nav ul {
 
 .container {
   display: flex;
-  min-height: 80vh;
-  background: aquamarine; }
+  min-height: 80vh; }
   .container .col {
     flex: 1; }
 
 .sidebar {
-  background: saddlebrown;
-  width: 12vw;
-  background: violet; }
+  background: #222;
+  width: 12vw; }
   .sidebar ul {
     margin: 0;
     padding: 0; }
@@ -53,9 +53,9 @@ nav ul {
         font-size: 1rem;
         display: block;
         text-decoration: none;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid #000;
         padding: .6rem;
-        background: saddlebrown;
+        background: #222;
         color: #fff; }
         .sidebar ul li a:hover {
           background: salmon; }
@@ -74,6 +74,9 @@ main {
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.75); }
   .card .card-img {
     background: #333; }
+  .card .card-header {
+    padding: 0.4rem;
+    background: rgba(153, 153, 153, 0.2); }
   .card .card-body {
     padding: 0.4rem; }
     .card .card-body .nb-views-preview {
@@ -82,6 +85,9 @@ main {
     width: 12vw; }
     .card.preview img {
       width: 100%; }
+  .card.central-form {
+    margin: 2rem auto;
+    width: 50vw; }
 
 .tags {
   margin: 1rem 0; }
@@ -102,3 +108,42 @@ main {
   border-bottom: 1px solid rgba(51, 51, 51, 0.4); }
   .recommends .recommend .thumbs {
     min-width: 30%; }
+
+.pagination-wrapper {
+  display: flex; }
+  .pagination-wrapper .pagination {
+    background: #333333;
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none; }
+    .pagination-wrapper .pagination.active {
+      background: #444; }
+    .pagination-wrapper .pagination:hover {
+      background: #777; }
+
+/**
+    Form
+ */
+form .form-group {
+  margin-bottom: 1rem;
+  display: flex; }
+
+form label {
+  font-weight: bold;
+  min-width: 15%; }
+
+form input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.4rem; }
+
+/**
+    Buttons
+ */
+button, .button {
+  background: #fff;
+  border: 1px solid #222;
+  padding: 0.4rem 0.8rem; }
+  button.blue, .button.blue {
+    background: blue;
+    color: #fff; }

@@ -1,14 +1,14 @@
 body {
-    background: darkred;
     margin: 0;
     padding: 0;
     font-family: Arial;
+    background: #242424;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    background: #000;
+    background: #242424;
 
     .header-top {
         display: flex;
@@ -21,6 +21,8 @@ header {
             input {
                 width: 100%;
                 padding: 1rem;
+                border-radius: 0.4rem;
+                border: 1px solid transparent;
             }
         }
     }
@@ -53,7 +55,6 @@ nav {
 .container {
     display: flex;
     min-height: 80vh;
-    background: aquamarine;
     
     .col {
         flex: 1;
@@ -61,9 +62,8 @@ nav {
 }
 
 .sidebar {
-    background: saddlebrown;
+    background: #222;
     width: 12vw;
-    background: violet;
 
     ul {
         margin: 0;
@@ -76,9 +76,9 @@ nav {
                 font-size: 1rem;
                 display: block;
                 text-decoration: none;
-                border-bottom: 1px solid red;
+                border-bottom: 1px solid #000;
                 padding: .6rem;
-                background: saddlebrown;
+                background: #222;
                 color: #fff;
 
                 &:hover {
@@ -108,6 +108,11 @@ main {
         background: #333;
     }
 
+    .card-header {
+        padding: 0.4rem;
+        background: rgba(#999, 0.2);
+    }
+
     .card-body {
         padding: 0.4rem;
 
@@ -127,6 +132,11 @@ main {
         img {
             width: 100%;
         }
+    }
+
+    &.central-form {
+        margin: 2rem auto;
+        width: 50vw;
     }
 }
 
@@ -161,4 +171,59 @@ main {
     }
 }
 
+.pagination-wrapper {
+    display: flex;
 
+    .pagination {
+        background: #333333;
+        padding: 1rem;
+        color: #fff;
+        text-decoration: none;
+
+        &.active {
+            background: #444;
+        }
+
+        &:hover {
+            background: #777;
+        }
+    }
+}
+
+/**
+    Form
+ */
+
+form {
+
+    .form-group {
+        margin-bottom: 1rem;
+        display: flex;
+    }
+
+    label {
+        font-weight: bold;
+        min-width: 15%;
+    }
+
+    input {
+        display: inline-block;
+        width: 100%;
+        padding: 0.4rem;
+    }
+}
+
+/**
+    Buttons
+ */
+
+button, .button {
+    background: #fff;
+    border: 1px solid #222;
+    padding: 0.4rem 0.8rem;
+
+    &.blue {
+        background: blue;
+        color: #fff;
+    }
+}
