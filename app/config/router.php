@@ -30,6 +30,18 @@ $router->addPost('/register', [
     'action' => 'post'
 ]);
 
+$router->addGet('/login', [
+    'namespace' => 'Auth',
+    'controller' => 'Login',
+    'action' => 'index'
+]);
+
+$router->addPost('/login', [
+    'namespace' => 'Auth',
+    'controller' => 'Register',
+    'action' => 'post'
+]);
+
 $router->handle($_SERVER['REQUEST_URI']);
 
 

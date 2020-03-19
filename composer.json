@@ -2,7 +2,8 @@
   "name": "Ez-P",
   "type": "project",
   "require": {
-
+    "phalcon/migrations": "^1.2",
+    "ext-mongodb": "*"
   },
   "require-dev": {
 

@@ -22,8 +22,12 @@
                 </form>
 
                 <div id="account-access">
-                    <a href="/login">Login</a>
-                    <a href="/register">Register</a>
+                    {% if session.get('user') %}
+                        <a href="#">Dashboard</a>
+                    {% else %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="header-bot">
@@ -47,7 +51,7 @@
             <div class="sidebar">
                 <ul>
                     {% for i in [0, 0,0,0,0,0] %}
-                        <li><a href="#">zz</a></li>
+                        <li><a href="#">#ere</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -60,5 +64,7 @@
         <footer>
             footer
         </footer>
+
+        {{ flash.output() }}
     </body>
 </html>
